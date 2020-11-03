@@ -56,7 +56,7 @@ describe('Linked List', () => {
     it('should have size of 0 when inserting one item and then removing one item', () => {
       linkedList.insert(5);
       expect(linkedList.size()).toEqual(1);
-      linkedList.remove();
+      linkedList.remove(5);
       expect(linkedList.size()).toEqual(0);
     });
   });

@@ -28,16 +28,16 @@ class LinkedList {
     let previous = null;
     while (node) {
       if (node.data == val) {
-        if (previous != null) {
-          previous.next = node.next;
+        if (previous != null) { 
+          previous.next = node.next;        
+        } else {
+          this.head = this.head.next;
         }
-      } else {
-        this.head = null;
+        return;
       }
-      return;
+      previous = node;
+      node = node.next;
     }
-    previous = node;
-    node = node.next;
   }
 
 
