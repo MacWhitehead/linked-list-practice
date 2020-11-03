@@ -45,6 +45,15 @@ describe('Linked List', () => {
       expect(linkedList.find(7)).toEqual(false);
       expect(linkedList.find(13)).toEqual(true);
     });
+    it('should not contain the number 5 when 5, 7 and 13 are inserted and then 5 is removed', () => {
+      linkedList.insert(5);
+      linkedList.insert(7);
+      linkedList.insert(13);
+      linkedList.remove(5);
+      expect(linkedList.find(5)).toEqual(false);
+      expect(linkedList.find(7)).toEqual(true);
+      expect(linkedList.find(13)).toEqual(true);
+    });
     it('should decrease the size when an item is removed', () => {
       linkedList.insert(5);
       linkedList.insert(7);
@@ -56,7 +65,7 @@ describe('Linked List', () => {
     it('should have size of 0 when inserting one item and then removing one item', () => {
       linkedList.insert(5);
       expect(linkedList.size()).toEqual(1);
-      linkedList.remove();
+      linkedList.remove(5);
       expect(linkedList.size()).toEqual(0);
     });
   });
